@@ -1,0 +1,17 @@
+.nga-navbar {
+  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
+  background-color: #ffffff;
+
+}
+
+.nga-navbar-logo {
+  font-weight: 600;
+  font-size: x-large;
+  color: rgb(0, 0, 0);
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+}

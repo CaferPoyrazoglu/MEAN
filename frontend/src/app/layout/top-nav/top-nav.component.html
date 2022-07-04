@@ -1,0 +1,25 @@
+<header class="navbar navbar-dark nga-navbar">
+  <div class="container" style="padding-top: 15px; padding-bottom: 15px;">
+    <div>
+      <a routerLink="/home" class="navbar-brand">
+        <span class="nga-navbar-logo mx-1">Anasayfa</span>
+      </a>
+    </div>
+    <div class="" *ngIf="!isLoggedIn">
+      <a href="/register" routerLink="register" class="navbar-brand">
+        <span class="nga-navbar-logo mx-1">Kayıt Ol</span>
+      </a>
+      <a href="/login" routerLink="login" class="navbar-brand">
+        <span class="nga-navbar-logo mx-1">Giriş Yap</span>
+      </a>
+    </div>
+    <div class="" *ngIf="isLoggedIn">
+      <a href="/profile" routerLink="profile" class="navbar-brand">
+        <span class="nga-navbar-logo mx-1">{{ username }}</span>
+      </a>
+      <a (click)="logout()" routerLink="" class="navbar-brand">
+        <span class="nga-navbar-logo mx-1">Çıkış Yap</span>
+      </a>
+    </div>
+  </div>
+</header>
