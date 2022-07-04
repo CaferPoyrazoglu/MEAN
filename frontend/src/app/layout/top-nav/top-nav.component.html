@@ -5,7 +5,7 @@
         <span class="nga-navbar-logo mx-1">Anasayfa</span>
       </a>
     </div>
-    <div class="" *ngIf="!isLoggedIn">
+    <div *ngIf="!isLoggedIn">
       <a href="/register" routerLink="register" class="navbar-brand">
         <span class="nga-navbar-logo mx-1">Kayıt Ol</span>
       </a>
@@ -13,9 +13,12 @@
         <span class="nga-navbar-logo mx-1">Giriş Yap</span>
       </a>
     </div>
-    <div class="" *ngIf="isLoggedIn">
-      <a href="/profile" routerLink="profile" class="navbar-brand">
-        <span class="nga-navbar-logo mx-1">{{ username }}</span>
+    <div *ngIf="isLoggedIn">
+      <a *ngIf="isAdmin" href="/admin" routerLink="admin" class="navbar-brand">
+        <button type="button" class="btn btn-warning">Admin Paneli</button>
+      </a>
+      <a *ngIf="!isAdmin" href="/profile" routerLink="profile" class="navbar-brand">
+        <button type="button" class="btn btn-light">Kullanıcı Paneli</button>
       </a>
       <a (click)="logout()" routerLink="" class="navbar-brand">
         <span class="nga-navbar-logo mx-1">Çıkış Yap</span>

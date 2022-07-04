@@ -9,6 +9,7 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 export class TopNavComponent {
   private roles: string[] = [];
   isLoggedIn = false;
+  isAdmin = false;
   showAdminBoard = false;
   showModeratorBoard = false;
   username?: string;
@@ -22,6 +23,12 @@ export class TopNavComponent {
       const user = this.tokenStorageService.getUser();
       this.username = user.username;
     }
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.isAdmin = user.isAdmin;
+    }
+
   }
 
   logout(): void {
