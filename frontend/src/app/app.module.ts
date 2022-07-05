@@ -5,12 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
-import { ProfileComponent } from './profile/profile.component';
-import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { HomeComponent } from './components/home/home.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { authInterceptorProviders } from './services/auth.interceptor';
 import { TopNavComponent } from './layout/top-nav/top-nav.component';
+
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +29,8 @@ import { TopNavComponent } from './layout/top-nav/top-nav.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatProgressBarModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

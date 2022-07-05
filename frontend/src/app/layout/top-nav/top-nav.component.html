@@ -14,14 +14,14 @@
       </a>
     </div>
     <div *ngIf="isLoggedIn">
-      <a *ngIf="isAdmin" href="/admin" routerLink="admin" class="navbar-brand">
-        <button type="button" class="btn btn-warning">Admin Paneli</button>
-      </a>
-      <a *ngIf="!isAdmin" href="/profile" routerLink="profile" class="navbar-brand">
-        <button type="button" class="btn btn-light">Kullanıcı Paneli</button>
-      </a>
       <a (click)="logout()" routerLink="" class="navbar-brand">
         <span class="nga-navbar-logo mx-1">Çıkış Yap</span>
+      </a>
+      <a *ngIf="isAdmin" href="/admin" routerLink="admin" class="navbar-brand">
+        <i class="bi bi-gear-fill ikonUser fa-lg"></i>
+      </a>
+      <a *ngIf="!isAdmin" href="/profile" routerLink="profile" class="navbar-brand">
+        <i class="bi bi-gear-fill ikonAdmin fa-lg"></i>
       </a>
     </div>
   </div>

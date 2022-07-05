@@ -1,14 +1,24 @@
 .nga-navbar {
   -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: #4267B2;
-
+  background-color: transparent;
 }
 
 .nga-navbar-logo {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: 600;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
+
+.ikonUser{
+  color: rgb(13, 165, 104);
+  font-size: x-large;
+}
+
+.ikonAdmin{
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+}
+
 
 
