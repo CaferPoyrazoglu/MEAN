@@ -14,14 +14,14 @@
       </a>
     </div>
     <div *ngIf="isLoggedIn">
-      <a (click)="logout()" routerLink="" class="navbar-brand">
-        <span class="nga-navbar-logo mx-1">Çıkış Yap</span>
+      <a *ngIf="!isAdmin" href="/profile" routerLink="profile" class="navbar-brand">
+        <span class="nga-navbar-logo mx-1" style="color: rgb(17, 231, 13);">{{ username }}</span>
       </a>
       <a *ngIf="isAdmin" href="/admin" routerLink="admin" class="navbar-brand">
-        <i class="bi bi-gear-fill ikonUser fa-lg"></i>
+        <span class="nga-navbar-logo mx-1" style="color: rgb(231, 148, 13);">{{ username }}</span>
       </a>
-      <a *ngIf="!isAdmin" href="/profile" routerLink="profile" class="navbar-brand">
-        <i class="bi bi-gear-fill ikonAdmin fa-lg"></i>
+      <a (click)="logout()" routerLink="" class="navbar-brand">
+        <span class="nga-navbar-logo mx-1">Çıkış Yap</span>
       </a>
     </div>
   </div>

@@ -1,12 +1,9 @@
 .nga-navbar {
-  -webkit-box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 11px 10px 0 rgba(0, 0, 0, 0.12);
-  background-color: transparent;
-}
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;}
 
 .nga-navbar-logo {
   font-size: 1.3em;
-  font-weight: 600;
+  font-weight: 500;
   color: rgb(0, 0, 0);
 }
 

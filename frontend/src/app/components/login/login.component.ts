@@ -56,9 +56,10 @@ export class LoginComponent implements OnInit {
   }
 
   reloadPage(): void {
-    this.router.navigate(['/login'])
-      .then(() => {
-        window.location.reload();
-      });
+    var delayInMilliseconds = 1500;
+
+    setTimeout(() => {
+      this.router.navigate(['/home'])
+    }, delayInMilliseconds);
   }
 }
