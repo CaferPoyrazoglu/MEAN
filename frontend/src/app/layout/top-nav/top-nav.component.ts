@@ -38,7 +38,6 @@ export class TopNavComponent {
         case event instanceof NavigationCancel:
         case event instanceof NavigationError: {
 
-          console.log(this.isLoggedIn);
           this.isLoggedIn = !!this.tokenStorageService.getToken();
           if (this.isLoggedIn) {
             const user = this.tokenStorageService.getUser();
