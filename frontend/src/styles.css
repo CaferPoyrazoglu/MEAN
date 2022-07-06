@@ -3,5 +3,20 @@
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 @import 'bulma/css/bulma.css';
 
+@font-face {
+    font-family: 'Custom';
+    src: url('assets/fonts/sf.otf') format('opentype');
+  }
+  
+  @font-face {
+    font-family: "space";
+    src: local("space"), url(./assets/fonts/space.ttf) format("truetype");
+  }
+  
+  
+  * {
+    font-family: 'space';
+  }
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
