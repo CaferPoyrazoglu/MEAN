@@ -18,8 +18,6 @@ export class TopNavComponent {
   private roles: string[] = [];
   isLoggedIn = false;
   isAdmin = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
   username?: string;
 
   constructor(private tokenStorageService: TokenStorageService, private router: Router,) { }
@@ -30,14 +28,6 @@ export class TopNavComponent {
     this.router.events.subscribe((event: Event) => {
       switch (true) {
         case event instanceof NavigationStart: {
-
-          break;
-        }
-
-        case event instanceof NavigationEnd:
-        case event instanceof NavigationCancel:
-        case event instanceof NavigationError: {
-
           this.isLoggedIn = !!this.tokenStorageService.getToken();
           if (this.isLoggedIn) {
             const user = this.tokenStorageService.getUser();
@@ -48,6 +38,13 @@ export class TopNavComponent {
             const user = this.tokenStorageService.getUser();
             this.isAdmin = user.isAdmin;
           }
+          break;
+        }
+
+        case event instanceof NavigationEnd:
+        case event instanceof NavigationCancel:
+        case event instanceof NavigationError: {
+
           break;
         }
         default: {
