@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { PostModel } from 'src/app/models/ui-model/post.model';
 import { PostService } from '../../services/post.service';
 
 @Component({
@@ -8,11 +9,12 @@ import { PostService } from '../../services/post.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  content?: string[];
+  posts: PostModel[] = [];
 
   constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.content = this.route.snapshot.data['data'];
+    this.posts = this.route.snapshot.data['data'];
+    debugger;
   }
 }

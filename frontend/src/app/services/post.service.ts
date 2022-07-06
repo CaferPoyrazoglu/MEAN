@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { PostModel } from '../models/api-model/post.model';
 
 const API_URL = 'http://localhost:5000/api/';
 
@@ -10,8 +11,8 @@ const API_URL = 'http://localhost:5000/api/';
 export class PostService {
   constructor(private http: HttpClient) { }
 
-  getPosts(): Observable<any> {
-    return this.http.get(API_URL + 'posts', { responseType: 'text' });
+  getPosts(): Observable<PostModel[]> {
+    return this.http.get<PostModel[]>(API_URL + 'posts');
   }
 
 }
