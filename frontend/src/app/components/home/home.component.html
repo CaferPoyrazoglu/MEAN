@@ -1,18 +1,13 @@
 
-  <div class="sablon" >
+    
     <div class="columns is-gapless is-multiline is-mobile">
-      <div class=" box column kart" style="margin: 1em; background-color: #3EC70B;" *ngFor="let item of posts">
+      <div class="box" style="margin: 1em; background-color: #3B44F6;" *ngFor="let item of posts">
         <div class="haber">
-          <div class="card-content">
-            <div class="media">
-              <div class="media-content">
+        
                 <p class="subtitle is-5" style="color: white;">{{ item.title }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
+                <p class="title is-6" style="color: white;">{{ item.createdAt  | date:'dd-MM-yyyy' }}</p>
+
       </div>
     </div>
-  </div>
 
 
