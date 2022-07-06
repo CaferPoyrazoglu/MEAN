@@ -2,18 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
 import { delay } from 'rxjs/operators';
-import { UserService } from '../../services/user.service';
+import { PostService } from '../../services/post.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HomeResolver implements Resolve<any> {
 
-  constructor(private userService: UserService) {
+  constructor(private postService: PostService) {
   }
 
   getTeams(): Observable<any> {
-    return this.userService.getPublicContent();
+    return this.postService.getPosts();
   }
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<string[]> {

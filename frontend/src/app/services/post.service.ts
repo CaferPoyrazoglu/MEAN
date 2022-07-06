@@ -2,16 +2,16 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-const API_URL = 'https://randomuser.me/';
+const API_URL = 'http://localhost:5000/api/';
 
 @Injectable({
   providedIn: 'root'
 })
-export class UserService {
+export class PostService {
   constructor(private http: HttpClient) { }
 
-  getPublicContent(): Observable<any> {
-    return this.http.get(API_URL + 'api', { responseType: 'text' });
+  getPosts(): Observable<any> {
+    return this.http.get(API_URL + 'posts', { responseType: 'text' });
   }
 
 }

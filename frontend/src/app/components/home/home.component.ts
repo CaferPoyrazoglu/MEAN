@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { UserService } from '../../services/user.service';
+import { PostService } from '../../services/post.service';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +10,7 @@ import { UserService } from '../../services/user.service';
 export class HomeComponent implements OnInit {
   content?: string[];
 
-  constructor(private userService: UserService, private route: ActivatedRoute) { }
+  constructor(private postService: PostService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.content = this.route.snapshot.data['data'];
