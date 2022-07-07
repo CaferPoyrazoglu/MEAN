@@ -8,10 +8,10 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { HomeResolver } from './components/home/home.resolver';
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, resolve: { data: HomeResolver } },
-  { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'profile', component: ProfileComponent },
+  { path: 'home', component: HomeComponent, resolve: { data: HomeResolver }, data: { animationState: 'Two' } },
+  { path: 'login', component: LoginComponent, data: { animationState: 'One' } },
+  { path: 'register', component: RegisterComponent, data: { animationState: 'register' } },
+  { path: 'profile', component: ProfileComponent, data: { animationState: 'Three' } },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 

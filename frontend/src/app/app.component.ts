@@ -1,19 +1,25 @@
 import { Component } from '@angular/core';
 import {
+  ChildrenOutletContexts,
   Event,
   NavigationCancel,
   NavigationEnd,
   NavigationError,
   NavigationStart,
-  Router
+  Router,
+  RouterOutlet
 } from '@angular/router';
+import { routeTransitionAnimations } from './animations';
 
 import { TokenStorageService } from './services/token-storage.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations: [
+    routeTransitionAnimations
+  ]
 })
 export class AppComponent {
   isLoggedIn = false;
@@ -22,7 +28,7 @@ export class AppComponent {
   username?: string;
   loading = false;
 
-  constructor(private tokenStorageService: TokenStorageService, private router: Router) {
+  constructor(private contexts: ChildrenOutletContexts, private tokenStorageService: TokenStorageService, private router: Router) {
 
   }
 
@@ -55,6 +61,12 @@ export class AppComponent {
       this.username = user.username;
     }
   }
+
+  prepareRoute(outlet: RouterOutlet) {
+    return outlet && 
+      outlet.activatedRouteData && 
+      outlet.activatedRouteData['animationState'];
+   }
 
   logout(): void {
     this.tokenStorageService.signOut();

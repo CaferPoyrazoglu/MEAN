@@ -15,6 +15,5 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.posts = this.route.snapshot.data['data'];
-    debugger;
   }
 }
